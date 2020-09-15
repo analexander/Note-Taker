@@ -18,7 +18,7 @@ module.exports = function(app) {
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
 
-    app.get("/api/tables", function(req, res) {
+    app.get("/api/notes", function(req, res) {
         //Should read the db.json file and return all saved notes as JSON.
         res.json(notesJSON);
     });
@@ -38,5 +38,5 @@ module.exports = function(app) {
         //remove the note with the given id property, and then rewrite the notes to the db.json file.
 
     });
-    
+
 };
