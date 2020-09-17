@@ -21,7 +21,7 @@ module.exports = function(app) {
 
     app.get("/api/notes", function(req, res) {
         //Should read the db.json file and return all saved notes as JSON.
-        res.json(notesJSON);
+        return res.json(notesJSON);
     });
 
     //API POST Request
@@ -29,7 +29,11 @@ module.exports = function(app) {
     app.post("/api/notes", function(req, res) {
         //Should receive a new note to save on the request body,
         //add it to the db.json file, and then return the new note to the client.
-        res.json(notesJSON);
+        let newNote = req.body;
+        console.log(newNote)
+        // notesJSON.push(newNote);
+        // return res.json(newNote)
+        // res.json(notesJSON);
     });
 
     app.delete("/api/notes/:id", function(req, res) {
