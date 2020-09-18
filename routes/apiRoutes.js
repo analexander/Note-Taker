@@ -30,9 +30,8 @@ module.exports = function(app) {
         //Should receive a new note to save on the request body,
         //add it to the db.json file, and then return the new note to the client.
         let newNote = req.body;
-        console.log(newNote)
-        // notesJSON.push(newNote);
-        // return res.json(newNote)
+        notesJSON.push(newNote);
+        return res.json(newNote)
         // res.json(notesJSON);
     });
 
