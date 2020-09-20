@@ -37,7 +37,21 @@ module.exports = function(app) {
         // res.json(notesJSON);
     });
 
+    //API DELETE Request
+
     app.delete("/api/notes/:id", function(req, res) {
+        let id = req.params.id.toString();
+        console.log(id);
+        for (i=0; i < notesJSON.length; i++){
+            if (notesJSON[i].id == id){
+                console.log("match!");
+                // responds with deleted note
+                res.send(notesJSON[i]);
+                // Removes the deleted note
+                notesJSON.splice(i, 1);
+                break;
+            }
+        }
         //Should receive a query parameter containing the id of a note to delete.
         //This means you'll need to find a way to give each note a unique id when it's saved.
         //In order to delete a note, you'll need to read all notes from the db.json file,
