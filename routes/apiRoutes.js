@@ -6,7 +6,6 @@
 
 const notesJSON = require("../db/db.json");
 const fs = require('fs');
-const path = require("path");
 
 // ===============================================================================
 // ROUTING
@@ -24,7 +23,6 @@ module.exports = function(app) {
         fs.readFileSync("./db/db.json", "utf8");
         return res.json(notesJSON);
     });
-        // return res.json(notesJSON);
 
     //API POST Request
 
@@ -36,7 +34,6 @@ module.exports = function(app) {
         newNote.id = noteID;
         notesJSON.push(newNote);
         return res.json(newNote)
-        // res.json(notesJSON);
     });
 
     //API DELETE Request
