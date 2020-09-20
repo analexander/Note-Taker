@@ -6,7 +6,7 @@
 
 const notesJSON = require("../db/db.json");
 const fs = require('fs');
-
+const path = require("path");
 
 // ===============================================================================
 // ROUTING
@@ -30,6 +30,8 @@ module.exports = function(app) {
         //Should receive a new note to save on the request body,
         //add it to the db.json file, and then return the new note to the client.
         let newNote = req.body;
+        let uniqueID = (notesJSON.length).toString();
+        newNote.id = uniqueID;
         notesJSON.push(newNote);
         return res.json(newNote)
         // res.json(notesJSON);
