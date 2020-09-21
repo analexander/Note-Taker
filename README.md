@@ -27,6 +27,8 @@ npm install
 
 Upon typing in the note field, a save button will appear for the user to save the note that was just created. The user can click on previously saved notes to view them and click on the trash can to delete them. 
 
+![gif walkthrough](/public/assets/imgs/note-taker.gif)
+
 ## License
 
 This project is licensed under the MIT license.
